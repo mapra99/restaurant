@@ -152,6 +152,8 @@ ActiveRecord::Schema.define(version: 2022_08_21_191920) do
     t.string "uuid", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "session_id", null: false
+    t.index ["session_id"], name: "index_purchase_carts_on_session_id"
     t.index ["uuid"], name: "index_purchase_carts_on_uuid", unique: true
   end
 
@@ -237,6 +239,7 @@ ActiveRecord::Schema.define(version: 2022_08_21_191920) do
   add_foreign_key "purchase_cart_extra_fees", "purchase_carts"
   add_foreign_key "purchase_cart_items", "purchase_carts"
   add_foreign_key "purchase_cart_items", "stocks"
+  add_foreign_key "purchase_carts", "sessions"
   add_foreign_key "stock_toppings", "stocks"
   add_foreign_key "stock_toppings", "toppings"
   add_foreign_key "stocks", "products"
