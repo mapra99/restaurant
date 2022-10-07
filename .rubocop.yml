@@ -28,3 +28,7 @@ Metrics/MethodLength:
 
 Metrics/ParameterLists:
   Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'config/routes.rb'
