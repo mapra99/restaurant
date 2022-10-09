@@ -155,6 +155,14 @@ ActiveRecord::Schema.define(version: 2022_08_21_191920) do
     t.index ["uuid"], name: "index_purchase_carts_on_uuid", unique: true
   end
 
+  create_table "sessions", force: :cascade do |t|
+    t.string "uuid", null: false
+    t.string "ip_address", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["uuid"], name: "index_sessions_on_uuid", unique: true
+  end
+
   create_table "stock_toppings", force: :cascade do |t|
     t.bigint "topping_id", null: false
     t.bigint "stock_id", null: false
