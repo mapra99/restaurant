@@ -9,4 +9,5 @@ class User < ApplicationRecord
   has_many :access_tokens, dependent: :destroy
   has_many :user_locations, dependent: :destroy
   has_many :locations, through: :user_locations
+  has_many :payments, dependent: :destroy
 end
